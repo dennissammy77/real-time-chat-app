@@ -4,10 +4,8 @@ import { db } from "./db";
 import GoogleProvider from "next-auth/providers/google";
 
 function getGoogleCredentials(){
-    // const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
-    // const clientSecret = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET
-    const clientId = '539498977901-re0m5041g5tlqm8n3qmo0tlqov6jemos.apps.googleusercontent.com'
-    const clientSecret = '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'
+    const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
+    const clientSecret = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET
     console.log(clientId, clientSecret)
 
     if(!clientId || clientId.length == 0){
