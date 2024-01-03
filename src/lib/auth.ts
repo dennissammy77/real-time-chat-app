@@ -4,8 +4,8 @@ import { db } from "./db";
 import GoogleProvider from "next-auth/providers/google";
 
 function getGoogleCredentials(){
-    const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
-    const clientSecret = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET
+    const clientId = process.env.GOOGLE_CLIENT_ID
+    const clientSecret = process.env.GOOGLE_CLIENT_SECRET
     console.log(clientId, clientSecret)
 
     if(!clientId || clientId.length == 0){
@@ -30,7 +30,14 @@ export const authOptions : NextAuthOptions = {
     providers: [
         GoogleProvider({
             clientId: getGoogleCredentials().clientId,
-            clientSecret: getGoogleCredentials().clientSecret
+            clientSecret: getGoogleCredentials().clientSecret,
+            authorization: {
+                params: {
+                  prompt: "consent",
+                  access_type: "offline",
+                  response_type: "code"
+                }
+              }
         })
     ],
     callbacks: {

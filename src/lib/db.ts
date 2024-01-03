@@ -1,6 +1,6 @@
 import {Redis} from '@upstash/redis'
 
 export const db =  new Redis({
-    url: process.env.NEXT_PUBLIC_UPSTASH_REDIS_REST_URL,
-    token: process.env.NEXT_PUBLIC_UPSTASH_REDIS_REST_TOKEN
+    url: 'https://usw1-direct-bulldog-33324.upstash.io',
+    token: 'AYIsASQgZDk0ZmUzMDAtNGQ2MS00N2YxLTg1MzYtYjYyYjE1YmY1NWEzOTFmYzNmMGEyODM3NDU4Yjg0OGE0ZDYyN2NhY2M2NWY='
 })
